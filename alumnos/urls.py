@@ -6,6 +6,9 @@ from rest_framework import routers
 from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework.authtoken.views import ObtainAuthToken
 
+from django.config import settings
+from django.config.urls.static import static
+
 #Adding endpoints to viewsets
 router = routers.DefaultRouter()
 router.register('alumnos', views.AlumnoViewSet)
@@ -17,6 +20,6 @@ urlpatterns = [
     # ----------------------------------------------------------------------------------
     path('api/v1/auth/', include('rest_auth.urls')),
     path('api/v1/auth/registration/',include('rest_auth.registration.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 
