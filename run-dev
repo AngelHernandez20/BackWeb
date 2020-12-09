@@ -1,1 +1,1 @@
-python manage.py runserver --settings=alumnos.settings.development
+python manage.py runserver --settings=api.settings.development
