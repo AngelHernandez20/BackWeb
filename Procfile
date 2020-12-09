@@ -1,1 +1,1 @@
-web: gunicorn alumnos.wsgi:application --pythonpat app --log-file - 
+web: gunicorn alumnos.wsgi:application --pythonpath app --log-file - 
