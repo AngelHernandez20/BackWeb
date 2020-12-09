@@ -6,8 +6,8 @@ from rest_framework import routers
 from rest_framework.urlpatterns import format_suffix_patterns
 from rest_framework.authtoken.views import ObtainAuthToken
 
-from django.config import settings
-from django.config.urls.static import static
+from django.conf import settings
+from django.conf.urls.static import static
 
 #Adding endpoints to viewsets
 router = routers.DefaultRouter()
