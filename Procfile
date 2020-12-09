@@ -1,0 +1,1 @@
+web: gunicorn alumnos.wsgi:application --pythonpatch app --log-file - 
