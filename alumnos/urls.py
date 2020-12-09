@@ -20,6 +20,6 @@ urlpatterns = [
     # ----------------------------------------------------------------------------------
     path('api/v1/auth/', include('rest_auth.urls')),
     path('api/v1/auth/registration/',include('rest_auth.registration.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]
 
 
