@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,13 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '()mlt0mae5r!$qn1hs5kz1a&x@k*d+)fk9iu$8jx9-kk$)hx4x'
-
+# SECRET_KEY = '()mlt0mae5r!$qn1hs5kz1a&x@k*d+)fk9iu$8jx9-kk$)hx4x'
+SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['172.31.22.225']
-
+# ALLOWED_HOSTS = ['172.31.22.225']
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -66,12 +68,20 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhitwNoiseMiddleware',
+    
 ]
+
+# CORS_ORIGIN_WHITELIST = (
+#   'http://localhost:4200',
+#   'http://127.0.0.1:4200',
+# )
 
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:4200',
+  'http://ec2-34-224-93-86.compute-1.amazonaws.com',
   'http://127.0.0.1:4200',
+  'http://34.224.93.86',
+  #ddns
 )
 
 ROOT_URLCONF = 'alumnos.urls'
@@ -120,14 +130,14 @@ WSGI_APPLICATION = 'alumnos.wsgi.application'
      }
  }
 
-import dj_database_url
-from decouple import config
+# import dj_database_url
+# from decouple import config
 
-DATABASES = {
-     'default': dj_database_url.config(
-         default=config('DATABASE_URL')
-     )
-}
+# DATABASES = {
+#      'default': dj_database_url.config(
+#          default=config('DATABASE_URL')
+#      )
+# }
 
 
 # Password validation
@@ -152,9 +162,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
 
@@ -165,14 +175,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    OS.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_DIRS = (
+#     OS.path.join(BASE_DIR, 'static'),
+# )
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # REST_FRAMEWORK = {
 #   'DEFAULT_PERMISSION_CLASSES': [                     
@@ -192,3 +202,9 @@ AUTHENTICATION_BACKENDS = (
    "django.contrib.auth.backends.ModelBackend",
    "allauth.account.auth_backends.AuthenticationBackend"
 )
+
+
+try: 
+    from alumnos.local_settings import *
+except ImportError:
+    pass    
