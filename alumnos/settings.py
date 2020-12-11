@@ -81,7 +81,7 @@ CORS_ORIGIN_WHITELIST = (
   'http://ec2-34-224-93-86.compute-1.amazonaws.com',
   'http://127.0.0.1:4200',
   'http://34.224.93.86',
-  #ddns
+  'http://alumnosweb.ddns.net:4200',
 )
 
 ROOT_URLCONF = 'alumnos.urls'
