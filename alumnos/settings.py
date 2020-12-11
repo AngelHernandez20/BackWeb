@@ -25,7 +25,7 @@ SECRET_KEY = '()mlt0mae5r!$qn1hs5kz1a&x@k*d+)fk9iu$8jx9-kk$)hx4x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['34.224.93.86']
 
 
 # Application definition
@@ -98,17 +98,26 @@ WSGI_APPLICATION = 'alumnos.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-  DATABASES={
+#   DATABASES={
+#       'default': {
+#           'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#           'NAME': 'Back_reporte',
+#           'USER': 'postgres',
+#           'PASSWORD': 'angel20340',
+#           'HOST': '127.0.0.1',
+#           'PORT': '5432',
+#       }
+#     }
+DATABASES={
       'default': {
           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-          'NAME': 'Back_reporte',
-          'USER': 'postgres',
+          'NAME': 'webdb',
+          'USER': 'webuserdb',
           'PASSWORD': 'angel20340',
-          'HOST': '127.0.0.1',
+          'HOST': '34.224.93.86',
           'PORT': '5432',
       }
     }
-
 #  DATABASES = {
 #      'default': {
 #          'ENGINE': 'django.db.backends.postgresql_psycopg2',
