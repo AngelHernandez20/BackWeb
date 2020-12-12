@@ -25,7 +25,7 @@ SECRET_KEY = '()mlt0mae5r!$qn1hs5kz1a&x@k*d+)fk9iu$8jx9-kk$)hx4x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.224.93.86']
+ALLOWED_HOSTS = ['34.224.93.86','172.31.22.225']
 
 
 # Application definition
@@ -108,16 +108,16 @@ WSGI_APPLICATION = 'alumnos.wsgi.application'
 #           'PORT': '5432',
 #       }
 #     }
-DATABASES={
-      'default': {
-          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-          'NAME': 'webdb',
-          'USER': 'webuserdb',
-          'PASSWORD': 'angel20340',
-          'HOST': '34.224.93.86',
-          'PORT': '5432',
-      }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'webdb',
+        'USER': 'webuserdb',
+        'PASSWORD': 'angel20340',
+        'HOST': '172.31.22.225',
+        'PORT': '5432',
     }
+}
 #  DATABASES = {
 #      'default': {
 #          'ENGINE': 'django.db.backends.postgresql_psycopg2',
