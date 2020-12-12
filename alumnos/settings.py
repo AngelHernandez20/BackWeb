@@ -124,16 +124,17 @@ WSGI_APPLICATION = 'alumnos.wsgi.application'
 #           'PORT': '5432',
 #       }
 #     }
-DATABASES={
-    'default':{
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'webdb',
-        'USER': 'webuserdb',
+        'NAME': 'Back_reporte',
+        'USER': 'postgres',
         'PASSWORD': 'angel20340',
-        'HOST': '34.224.93.86',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
+
 #  DATABASES = {
 #      'default': {
 #          'ENGINE': 'django.db.backends.postgresql_psycopg2',
