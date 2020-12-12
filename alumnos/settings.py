@@ -130,10 +130,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> staging
 #  DATABASES = {
 #      'default': {
 #          'ENGINE': 'django.db.backends.postgresql_psycopg2',
