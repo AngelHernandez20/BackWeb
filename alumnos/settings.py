@@ -146,20 +146,6 @@ DATABASES = {
 #      }
 #  }
 
-<<<<<<< HEAD
- DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-         'NAME': 'webdb',
-         'USER': 'webuserdb',
-         'PASSWORD': 'angel20340',
-         'HOST': '172.31.22.225',
-         'PORT': '5432',
-     }
- }
-
-=======
->>>>>>> staging
 # import dj_database_url
 # from decouple import config
 
