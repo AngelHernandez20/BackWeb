@@ -123,9 +123,9 @@ WSGI_APPLICATION = 'alumnos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'webdb',
-        'USER': 'webuserdb',
-        'PASSWORD': 'angel20340',
+        'NAME': 'webdb2',
+        'USER': 'webuserdb2',
+        'PASSWORD': 'angelhdz20',
         'HOST': 'localhost',
         'PORT': '5432',
     }
