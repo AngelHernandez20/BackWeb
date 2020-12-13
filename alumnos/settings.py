@@ -25,7 +25,7 @@ SECRET_KEY = '()mlt0mae5r!$qn1hs5kz1a&x@k*d+)fk9iu$8jx9-kk$)hx4x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*','172.31.38.154']
+ALLOWED_HOSTS = ['3.89.207.205']
 
 
 # Application definition
@@ -154,11 +154,6 @@ STATIC_URL = '/static/'
 #   ],
 # }
 
-AUTHENTICATION_BACKENDS = (
-   "django.contrib.auth.backends.ModelBackend",
-   "allauth.account.auth_backends.AuthenticationBackend"
-)
-
 SITE_ID = 1
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
@@ -171,8 +166,3 @@ AUTHENTICATION_BACKENDS = (
    "django.contrib.auth.backends.ModelBackend",
    "allauth.account.auth_backends.AuthenticationBackend"
 )
-
-try: 
-    from alumnos.local_settings import *
-except ImportError:
-    pass    
